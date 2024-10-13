@@ -15,3 +15,9 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view("register", ["yak" => "akwaokwoakw"]);
 });
+
+Route::prefix("app")->group(function () {
+    Route::get("/setup", function () {
+        return view("app.main");
+    });
+});
