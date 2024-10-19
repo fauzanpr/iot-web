@@ -6,13 +6,17 @@
                 <p class="font-medium text-black">Application Setup Manager</p>
             </div>
             <div>
-                <a href="/app/setup" class="block py-3 px-8 hover:bg-gray-100">Setup</a>
-                <a href="/app/history" class="block py-3 px-8 hover:bg-gray-100">History</a>
+                <a href="/app/setup" class="block py-3 px-8 hover:bg-gray-100" id="nav-setup">Setup</a>
+                <a href="/app/history" class="block py-3 px-8 hover:bg-gray-100" id="nav-history">History</a>
             </div>
         </div>
         <a href="/app/logout" class="block bg-red-100 text-red-500 font-medium py-3 px-8">Logout</a>
     </aside>
-    <main class="w-5/6 block h-screen ml-[16%]">
+    <main class="w-5/6 block h-screen ml-[16.6%]">
+        <header class="py-4 px-16 bg-gray-100 border-b flex justify-between items-center">
+            <p class="text-white font-light bg-gray-700 px-4 py-1 rounded-2xl" id="page">Setup Page</p>
+            <p>Hello, Fauzan</p>
+        </header>
         <div class="px-16 py-8">
             {{ $slot }}
         </div>
