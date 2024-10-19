@@ -8,12 +8,13 @@ use Illuminate\View\Component;
 
 class AppLayout extends Component
 {
+    public $active_tab;
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct($active_tab=null)
     {
-        //
+        $this->active_tab = $active_tab;
     }
 
     /**

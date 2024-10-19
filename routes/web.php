@@ -20,4 +20,7 @@ Route::prefix("app")->group(function () {
     Route::get("/setup", function () {
         return view("app.main");
     });
+    Route::get("/history", function () {
+        return view("app.history");
+    });
 });
