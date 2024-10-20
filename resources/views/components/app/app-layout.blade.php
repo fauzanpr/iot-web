@@ -1,4 +1,5 @@
 <x-app.modal.horizontal-modal></x-app.modal.horizontal-modal>
+<x-app.modal.vertical-modal></x-app.modal.vertical-modal>
 <div class="flex">
     <aside class="w-1/6 text-gray-500 font-light border-r h-screen flex flex-col justify-between fixed">
         <div>
@@ -14,9 +15,9 @@
         <a href="/app/logout" class="block bg-red-100 text-red-500 font-medium py-3 px-8">Logout</a>
     </aside>
     <main class="w-5/6 block h-screen ml-[16.6%]">
-        <header class="py-4 px-16 bg-gray-100 border-b flex justify-between items-center">
-            <p class="text-white font-light bg-gray-700 px-4 py-1 rounded-2xl" id="page">Setup Page</p>
-            <p>Hello, Fauzan</p>
+        <header class="py-6 px-16 bg-gray-100 border-b flex justify-between items-center">
+            <p class="font-semibold text-xl" id="page">Setup Page</p>
+            <p class="text-lg">Hello, Fauzan</p>
         </header>
         <div class="px-16 py-8">
             {{ $slot }}

@@ -15,7 +15,7 @@
             <div class="bg-gray-800 p-4 w-fit flex flex-col gap-4 rounded-2xl border text-white border-gray-200">
                 <p class="font-light">Vertical Value</p>
                 <p class="text-center text-5xl">10</p>
-                <button class="bg-white text-black rounded-lg" id="edit-vertical-btn">Edit</button>
+                <button class="bg-white text-black rounded-lg" id="edit-vertical-btn" onclick="handleClickVerticalButton()">Edit</button>
             </div>
         </div>
     </x-app.app-layout>

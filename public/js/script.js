@@ -2,6 +2,9 @@ const currentRoute = location.pathname;
 const modalAddValueHorizontal = document.getElementById(
     "modal-add-value-horizontal"
 );
+const modalAddValueVertical = document.getElementById(
+    "modal-add-value-vertical"
+);
 
 if (currentRoute === "/app/setup") {
     document.getElementById("page").innerHTML = "Setup Page";
@@ -11,6 +14,14 @@ if (currentRoute === "/app/setup") {
     document.getElementById("nav-history").style.backgroundColor = "black";
     document.getElementById("nav-history").style.color = "white";
     document.getElementById("page").innerHTML = "History Page";
+}
+
+function handleClickVerticalButton() {
+    if (modalAddValueVertical.classList.contains("hidden")) {
+        modalAddValueVertical.classList.remove("hidden");
+    } else {
+        modalAddValueVertical.classList.add("hidden");
+    }
 }
 
 function handleClickHorizontalButton() {
