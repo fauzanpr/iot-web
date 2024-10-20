@@ -9,5 +9,9 @@
 </head>
 <body>
     <p class="text-red-400">Hello World with Laravel and Vite Tailwind</p>
+    <h1>{{ $title }}</h1>
+    @foreach ($posts as $post)
+        <p>{{ $post["title"] }}</p>
+    @endforeach
 </body>
 </html>

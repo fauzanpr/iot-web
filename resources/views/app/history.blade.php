@@ -1,21 +1,23 @@
 <x-html-head>
     <x-app.app-layout :active_tab="'history'">
         <p class="text-3xl mb-10">History</p>
-        <table class="w-full">
+        <table class="w-full text-center">
             <tr class="bg-gray-100">
                 <th class="p-4">No</th>
-                <th class="p-4">Setpoint</th>
+                <th class="p-4">Vertical</th>
+                <th class="p-4">Horizontal</th>
                 <th class="p-4">Changer</th>
                 <th class="p-4">Change at</th>
             </tr>
-            @for ($i = 1; $i < 20; $i++)
-                <tr class="text-center">
-                    <td class="p-4">{{ $i }}</td>
-                    <td class="p-4">10</td>
+            @foreach ($configs as $config)
+                <tr>
+                    <td class="p-4">{{ $config['id'] }}</td>
+                    <td class="p-4">{{ $config['vertical'] }}</td>
+                    <td class="p-4">{{ $config['horizontal'] }}</td>
                     <td class="p-4">Fauzan Pradana</td>
-                    <td class="p-4">10/10/2024</td>
+                    <td class="p-4">{{ date('d-m-Y', strtotime($config['created_at'])) }}</td>
                 </tr>
-            @endfor
+            @endforeach
         </table>
     </x-app.app-layout>
 </x-html-head>
