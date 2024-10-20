@@ -1,3 +1,4 @@
+<x-app.modal.horizontal-modal></x-app.modal.horizontal-modal>
 <div class="flex">
     <aside class="w-1/6 text-gray-500 font-light border-r h-screen flex flex-col justify-between fixed">
         <div>

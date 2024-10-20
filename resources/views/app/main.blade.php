@@ -8,14 +8,14 @@
             <div class="bg-gray-800 p-4 w-fit flex flex-col gap-4 rounded-2xl border text-white border-gray-200">
                 <p class="font-light">Horizontal Value</p>
                 <p class="text-center text-5xl">20</p>
-                <button class="bg-white text-black rounded-lg">Edit</button>
+                <button class="bg-white text-black rounded-lg" id="edit-horizontal-btn" onclick="handleClickHorizontalButton()">Edit</button>
             </div>
 
             {{-- vertical --}}
             <div class="bg-gray-800 p-4 w-fit flex flex-col gap-4 rounded-2xl border text-white border-gray-200">
                 <p class="font-light">Vertical Value</p>
                 <p class="text-center text-5xl">10</p>
-                <button class="bg-white text-black rounded-lg">Edit</button>
+                <button class="bg-white text-black rounded-lg" id="edit-vertical-btn">Edit</button>
             </div>
         </div>
     </x-app.app-layout>
