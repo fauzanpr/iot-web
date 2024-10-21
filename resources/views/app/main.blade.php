@@ -4,7 +4,7 @@
             <div class="bg-green-200 text-green-600 px-4 py-2 mb-16">{{ session('success') }}</div>
         @endif
 
-        <p class="text-3xl font-semibold mb-2">Hello, Fauzan!</p>
+        <p class="text-3xl font-semibold mb-2">Hello, {{ Auth::user()->username }}!</p>
         <p class="text-gray-400 font-light mb-10">you can change set point here</p>
         <div class="w-1/3 flex gap-2">
 

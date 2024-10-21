@@ -20,7 +20,7 @@
     <main class="w-5/6 block h-screen ml-[16.6%]">
         <header class="py-6 px-16 bg-gray-100 border-b flex justify-between items-center">
             <p class="font-semibold text-xl" id="page">Setup Page</p>
-            <p class="text-lg">Hello, Fauzan</p>
+            <p class="text-lg">Hello, {{ Auth::user()->username }}</p>
         </header>
         <div class="px-16 py-8">
             {{ $slot }}
