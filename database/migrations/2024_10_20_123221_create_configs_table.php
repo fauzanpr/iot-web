@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer("vertical");
             $table->integer("horizontal");
+            $table->text("created_by");
             $table->timestamps();
         });
     }

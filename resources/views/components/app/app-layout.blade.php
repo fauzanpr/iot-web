@@ -12,7 +12,10 @@
                 <a href="/app/history" class="block py-3 px-8 hover:bg-gray-100" id="nav-history">History</a>
             </div>
         </div>
-        <a href="/app/logout" class="block bg-red-100 text-red-500 font-medium py-3 px-8">Logout</a>
+        <form action="/logout" method="POST">
+            @csrf
+            <button type="submit" class="block w-full bg-red-100 text-red-500 font-medium py-3 px-8 text-start cursor-pointer">Logout</button>
+        </form>
     </aside>
     <main class="w-5/6 block h-screen ml-[16.6%]">
         <header class="py-6 px-16 bg-gray-100 border-b flex justify-between items-center">

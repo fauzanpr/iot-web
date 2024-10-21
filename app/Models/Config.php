@@ -11,6 +11,7 @@ class Config extends Model
 
     protected $fillable = [
         "vertical",
-        "horizontal"
+        "horizontal",
+        "created_by"
     ];
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Config;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SetupController extends Controller
 {
@@ -19,7 +20,8 @@ class SetupController extends Controller
     {
         $request_validated = $request->validate([
             "horizontal" => "nullable",
-            "vertical" => "nullable"
+            "vertical" => "nullable",
+            "created_by" => "nullable"
         ]);
 
         $vertical = Config::pluck("vertical")->last();
@@ -28,6 +30,7 @@ class SetupController extends Controller
         } else {
             $request_validated["vertical"] = $vertical;
         }
+        $request_validated["created_by"] = Auth::user()->username;;
 
         Config::create($request_validated);
         return redirect("/app/setup")->with("success", "Berhasil update setpoin!");
@@ -36,7 +39,8 @@ class SetupController extends Controller
     public function storeVertical(Request $request) {
         $request_validated = $request->validate([
             "horizontal" => "nullable",
-            "vertical" => "nullable"
+            "vertical" => "nullable",
+            "created_by" => "nullable"
         ]);
 
         $horizontal = Config::pluck("horizontal")->last();
@@ -45,6 +49,7 @@ class SetupController extends Controller
         } else {
             $request_validated["horizontal"] = $horizontal;
         }
+        $request_validated["created_by"] = Auth::user()->username;;
 
         Config::create($request_validated);
         return redirect("/app/setup")->with("success", "Berhasil update setpoin!");

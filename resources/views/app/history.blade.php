@@ -9,14 +9,20 @@
                 <th class="p-4">Changer</th>
                 <th class="p-4">Change at</th>
             </tr>
+            @php
+                $i = 1;
+            @endphp
             @foreach ($configs as $config)
                 <tr>
-                    <td class="p-4">{{ $config['id'] }}</td>
+                    <td class="p-4">{{ $i }}</td>
                     <td class="p-4">{{ $config['vertical'] }}</td>
                     <td class="p-4">{{ $config['horizontal'] }}</td>
-                    <td class="p-4">Fauzan Pradana</td>
+                    <td class="p-4">{{ $config["created_by"] }}</td>
                     <td class="p-4">{{ date('d-m-Y', strtotime($config['created_at'])) }}</td>
                 </tr>
+                @php
+                    $i++;
+                @endphp
             @endforeach
         </table>
     </x-app.app-layout>
