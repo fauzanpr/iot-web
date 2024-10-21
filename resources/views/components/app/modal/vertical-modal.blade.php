@@ -34,7 +34,7 @@
                         </div>
                         <div>
                             <label for="vertical" class="block mb-2">Vertical Value</label>
-                            <input type="number" id="vertical" name="vertical" placeholder="Input Vertical Value"
+                            <input type="number" id="vertical" name="vertical" min="50" max="110" placeholder="Input Vertical Value"
                                 class="block p-2 border w-full rounded-lg placeholder:font-light placeholder:italic">
                         </div>
                     </div>
