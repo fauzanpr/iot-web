@@ -22,3 +22,6 @@ Route::prefix("app")->group(function () {
     Route::get("/setup", [SetupController::class, "index"]);
     Route::get("/history", [HistoryController::class, "index"]);
 });
+
+Route::post("/app/setup/horizontal", [SetupController::class, "storeHorizontal"]);
+Route::post("/app/setup/vertical", [SetupController::class, "storeVertical"]);
