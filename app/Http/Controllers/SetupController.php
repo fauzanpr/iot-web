@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Config;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
 
 class SetupController extends Controller
 {
@@ -36,7 +37,8 @@ class SetupController extends Controller
         return redirect("/app/setup")->with("success", "Berhasil update setpoin!");
     }
 
-    public function storeVertical(Request $request) {
+    public function storeVertical(Request $request)
+    {
         $request_validated = $request->validate([
             "horizontal" => "nullable",
             "vertical" => "nullable",
