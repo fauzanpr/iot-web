@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Console\Commands\MqttListener;
 use App\Models\Config;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
+use PhpMqtt\Client\Facades\MQTT;
 
 class SetupController extends Controller
 {
@@ -19,6 +21,7 @@ class SetupController extends Controller
 
     public function storeHorizontal(Request $request)
     {
+        $mqtt = MQTT::connection();
         $request_validated = $request->validate([
             "horizontal" => "nullable",
             "vertical" => "nullable",
@@ -34,11 +37,13 @@ class SetupController extends Controller
         $request_validated["created_by"] = Auth::user()->username;;
 
         Config::create($request_validated);
+        $mqtt->publish("x_web_fauzan_pradana_oye", $request_validated["horizontal"]);
         return redirect("/app/setup")->with("success", "Berhasil update setpoin!");
     }
 
     public function storeVertical(Request $request)
     {
+        $mqtt = MQTT::connection();
         $request_validated = $request->validate([
             "horizontal" => "nullable",
             "vertical" => "nullable",
@@ -54,6 +59,7 @@ class SetupController extends Controller
         $request_validated["created_by"] = Auth::user()->username;;
 
         Config::create($request_validated);
+        $mqtt->publish("y_web_fauzan_pradana_oye", $request_validated["vertical"]);
         return redirect("/app/setup")->with("success", "Berhasil update setpoin!");
     }
 }
