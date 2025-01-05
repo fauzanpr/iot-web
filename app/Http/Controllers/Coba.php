@@ -13,7 +13,7 @@ class Coba extends Controller
     function index() {
         $tests = "Halo dunia";
         $mqtt = MQTT::connection();
-        $mqtt->subscribe("x_web_fauzan_pradana_oye", function($topic, $message) {
+        $mqtt->subscribe("horizontal_1736_topic", function($topic, $message) {
             DB::table('config')->insert([
                 "horizontal" => $message,
                 "vertical" => 0,

@@ -21,7 +21,7 @@ class MqttSubs implements ShouldQueue
     public function handle(): void
     {
         $mqtt = MQTT::connection();
-        $mqtt->subscribe("x_web_fauzan_pradana_oye", function ($topic, $msg) {
+        $mqtt->subscribe("horizontal_1736_topic", function ($topic, $msg) {
             $vertical = DB::table("configs")->orderBy("id", "desc")->value("vertical");
             DB::table('configs')->insert([
                 "horizontal" => $msg,
@@ -31,7 +31,7 @@ class MqttSubs implements ShouldQueue
             ]);
         }, 0);
 
-        $mqtt->subscribe("y_web_fauzan_pradana_oye", function ($topic, $msg) {
+        $mqtt->subscribe("vertical_1736_topic", function ($topic, $msg) {
             $horizontal = DB::table("configs")->orderBy("id", "desc")->value("horizontal");
             DB::table('configs')->insert([
                 "horizontal" => $horizontal,
