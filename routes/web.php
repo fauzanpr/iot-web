@@ -5,6 +5,7 @@ use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SetupController;
+use App\Jobs\MqttSubs;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,7 @@ Route::get('/register', [RegisterController::class, "index"])->middleware("guest
 Route::post("/register", [RegisterController::class, "store"]);
 
 Route::prefix("app")->group(function () {
+    MqttSubs::dispatch();
     Route::get("/setup", [SetupController::class, "index"])->middleware("auth");
     Route::get("/history", [HistoryController::class, "index"])->middleware("auth");
 });
