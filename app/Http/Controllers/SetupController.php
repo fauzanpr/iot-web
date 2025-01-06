@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Console\Commands\MqttListener;
 use App\Models\Config;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Http;
 use PhpMqtt\Client\Facades\MQTT;
 
 class SetupController extends Controller
@@ -21,6 +19,10 @@ class SetupController extends Controller
 
     public function storeHorizontal(Request $request)
     {
+        if (!$request->isMethod("POST")) {
+            return redirect()->route("setup");
+        };
+        
         $mqtt = MQTT::connection();
         $request_validated = $request->validate([
             "horizontal" => "nullable",
@@ -43,6 +45,10 @@ class SetupController extends Controller
 
     public function storeVertical(Request $request)
     {
+        if (!$request->isMethod("POST")) {
+            return redirect()->route("setup");
+        };
+        
         $mqtt = MQTT::connection();
         $request_validated = $request->validate([
             "horizontal" => "nullable",
