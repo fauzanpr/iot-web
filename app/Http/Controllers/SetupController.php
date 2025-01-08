@@ -39,7 +39,7 @@ class SetupController extends Controller
         $request_validated["created_by"] = Auth::user()->username;;
 
         Config::create($request_validated);
-        $mqtt->publish("horizontal_1736_topic", $request_validated["horizontal"]);
+        $mqtt->publish("horizontal_1736_topic_pub_web", $request_validated["horizontal"]);
         return redirect("/app/setup")->with("success", "Berhasil update setpoin!");
     }
 
@@ -62,10 +62,10 @@ class SetupController extends Controller
         } else {
             $request_validated["horizontal"] = $horizontal;
         }
-        $request_validated["created_by"] = Auth::user()->username;;
+        $request_validated["created_by"] = Auth::user()->username;
 
         Config::create($request_validated);
-        $mqtt->publish("vertical_1736_topic", $request_validated["vertical"]);
+        $mqtt->publish("vertical_1736_topic_pub_web", $request_validated["vertical"]);
         return redirect("/app/setup")->with("success", "Berhasil update setpoin!");
     }
 }

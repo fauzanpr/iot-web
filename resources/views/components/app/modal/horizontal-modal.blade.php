@@ -34,7 +34,7 @@
                         </div>
                         <div>
                             <label for="horizontal" class="block mb-2">Horizontal Value</label>
-                            <input type="number" name="horizontal" id="horizontal" min="0" max="180" placeholder="Input Horizontal Value"
+                            <input required type="number" name="horizontal" id="horizontal" min="0" max="180" placeholder="Input Horizontal Value"
                                 class="block p-2 border w-full rounded-lg placeholder:font-light placeholder:italic">
                         </div>
                     </div>
