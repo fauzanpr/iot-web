@@ -1,4 +1,4 @@
-<form action="/app/setup/horizontal" method="POST">
+{{-- <form action="/app/setup/horizontal" method="POST">
     @csrf
     <div class="relative z-10 hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true"
         id="modal-add-value-horizontal">
@@ -46,6 +46,50 @@
                             onclick="handleClickHorizontalButton()">Cancel</button>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</form> --}}
+
+<form action="/app/setup/horizontal" method="POST">
+    @csrf
+    <div class="relative z-10 hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true"
+        id="modal-add-value-horizontal">
+        
+        <!-- Modal Backdrop -->
+        <div class="fixed inset-0 bg-gray-100 bg-opacity-75 transition-opacity overflow-hidden" aria-hidden="true"></div>
+
+        <!-- Modal Wrapper -->
+        <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+            <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                
+                <!-- Modal Content -->
+                <div
+                    class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all w-full max-w-sm sm:max-w-lg sm:my-8">
+                    
+                    <!-- Modal Header & Input -->
+                    <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                        <div class="sm:flex sm:items-start mb-4">
+                            <p class="text-lg font-semibold">Edit Horizontal Value</p>
+                        </div>
+                        <div>
+                            <label for="horizontal" class="block mb-2">Horizontal Value</label>
+                            <input required type="number" name="horizontal" id="horizontal" min="0" max="180"
+                                placeholder="Input Horizontal Value"
+                                class="block w-full p-2 border rounded-lg placeholder:font-light placeholder:italic">
+                        </div>
+                    </div>
+
+                    <!-- Modal Footer -->
+                    <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                        <button type="submit"
+                            class="inline-flex w-full justify-center rounded-md bg-gray-800 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-900 sm:ml-3 sm:w-auto">Submit</button>
+                        <button type="button"
+                            class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+                            onclick="handleClickHorizontalButton()">Cancel</button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
