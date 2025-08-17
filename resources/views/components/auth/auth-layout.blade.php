@@ -12,10 +12,10 @@
         <div
             class="bg-[#4152EF] w-full h-full rounded-2xl rounded-b-none rounded-r-none p-8 text-white flex flex-col gap-4 justify-center font-light items-center">
             <p class="text-3xl">Welcome to this Application!</p>
-            <p class="text-lg">this application is Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            {{-- <p class="text-lg">this application is Lorem ipsum dolor sit amet consectetur adipisicing elit.</p> --}}
             <img src={{ asset('assets/antena.png') }} alt="gambar antena"
                 class="w-2/3 bg-gray-200 border-2 border-white rounded-lg">
-            <p class="mt-8 bg-white text-blue-500 rounded-2xl px-4 py-1 font-medium">copyright &copy; Polinema 2024</p>
+            <p class="mt-8 bg-white text-blue-500 rounded-2xl px-4 py-1 font-medium">copyright &copy; Polinema 2025</p>
         </div>
     </section>
 </main>
